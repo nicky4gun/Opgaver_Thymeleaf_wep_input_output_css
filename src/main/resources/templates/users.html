@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+    <h1>All users</h1>
+
+    <ul>
+        <li th:each="user : ${users}">
+            <b th:text="${user.name}"></b> -
+            <span th:text="${user.email}"></span> -
+            <span th:text="${user.favoriteColor}"></span> -
+            <span th:text="${user.gender}"></span> -
+            <span th:text="${#strings.listJoin(user.interests, ', ')}"></span>
+        </li>
+    </ul>
+    <a th:href="@{/}">Back to registration</a>
+</body>
+</html>

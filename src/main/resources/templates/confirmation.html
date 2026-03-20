@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
 </head>
 <body>
-$END$
+    <h1>Bruger oprettet!</h1>
+
+    <p>Navn: <span th:text="${user.name}"></span></p>
+    <p>Email: <span th:text="${user.email}"></span></p>
+    <p>Favoritfarve: <span th:text="${user.favoriteColor}"></span></p>
+    <p>Køn: <span th:text="${user.gender}"></span></p>
+    <p>Interesser: <span th:text="${#strings.listJoin(user.interests, ', ')}"></span></p>
+
+    <a th:href="@{/users}">List of users</a>
 </body>
 </html>
